@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block contents %}
+
+    <body class="text-center" style="background-color: #212121">
+    <div class="container">
+        <form method="POST" CLASS="form-register" style="color: white">
+            {{ form.hidden_tag() }}
+            <img class="mb-4"
+                 src="https://cdn.dribbble.com/users/114203/screenshots/2196689/media/5a15d9d900c559b763d5a246cf962fc9.png?resize=768x576&vertical=center"
+                 width="300"
+                 height="200"
+                 alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Log in with your account
+            </h1>
+            <br>
+
+            <div class="left-aligned" style="text-align: left">
+                {{ form.username.label() }}
+                {{ form.username(class="form-control", placeholder="User Name") }}
+
+                {{ form.password.label() }}
+                {{ form.password(class="form-control", placeholder="Password") }}
+
+            </div>
+            <br>
+
+            <div class="checkbox mb-3">
+                <h6>Do not have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+        </form>
+    </div>
+    </body>
+{% endblock %}
